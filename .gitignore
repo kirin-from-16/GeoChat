@@ -1,0 +1,4 @@
+*.pyc
+*.bin
+geochat.egg-info
+*pycache

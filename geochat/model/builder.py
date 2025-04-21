@@ -100,8 +100,11 @@ def load_pretrained_model(model_path, model_base, model_name, load_8bit=False, l
                 model = GeoChatMPTForCausalLM.from_pretrained(model_path, low_cpu_mem_usage=True, **kwargs)
             else:
                 print("Loading GeoChat......")
+                print("Loading tokenizer......")
                 tokenizer = AutoTokenizer.from_pretrained(model_path, use_fast=False)
+
                 model = GeoChatLlamaForCausalLM.from_pretrained(model_path, low_cpu_mem_usage=True, **kwargs)
+                print("Loading GeoChat done.")
     else:
         # Load language model
         if model_base is not None:

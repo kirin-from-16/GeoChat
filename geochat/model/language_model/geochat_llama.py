@@ -48,7 +48,9 @@ class GeoChatLlamaForCausalLM(LlamaForCausalLM, GeoChatMetaForCausalLM):
         self.lm_head = nn.Linear(config.hidden_size, config.vocab_size, bias=False)
 
         # Initialize weights and apply final processing
+        print("Initializing GeoChatLlamaForCausalLM")
         self.post_init()
+        print("Finished initializing GeoChatLlamaForCausalLM")
 
     def get_model(self):
         return self.model
